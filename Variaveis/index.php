@@ -18,18 +18,18 @@
 
 <body>
 
-    <header>
-        <h1>
-            <?php
+<header>
+    <h1>
+        <?php
 
-                $nome = $_GET['nome'];
+        $nome = $_GET['nome'];
 
-                echo 'Olá, ' . $nome;
+        echo 'Olá, ' . $nome;
 
-            ?>
-        </h1>
-        <h1><?='Olá, ' . htmlspecialchars($_GET['nome']);?></h1>
+        ?>
+    </h1>
+    <h1><?='Olá, ' . htmlspecialchars($_GET['nome']);?></h1>
 
-    </header>
+</header>
 </body>
 </html>
