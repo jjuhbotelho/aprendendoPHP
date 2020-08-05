@@ -15,8 +15,12 @@ $task = [
     'title' => 'Homework',
     'due' => date('d-m-Y'),
     'assigned_to' => 'Eu mesma',
-    'completed' => true
+    'completed' => false
 ];
+
+//Homework
+//Adicionar outro valor booleano e fazer as alterações no HTML
+
 
 //var_dump() serve para ver os valores da array
 //die() serve pra parar onde foi indicado

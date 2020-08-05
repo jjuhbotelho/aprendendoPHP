@@ -26,7 +26,7 @@
         <?php endforeach; ?>
     </ul>
 
-
+    <!-- Dessa forma podemos ver que o boolean não aparece na listagem -->
     <h1>Task do Dia: </h1>
     <ul>
         <?php foreach ($task as $heading => $value) : ?>
@@ -34,6 +34,7 @@
         <?php endforeach; ?>
     </ul>
 
+    <!-- Dessa forma temos mais controle do conteúdo e podemos trazer o boolean -->
     <ul>
         <li>
             <strong>Name: </strong> <?= $task['title']; ?>
@@ -45,7 +46,16 @@
             <strong>Person Responsible: </strong> <?= $task['assigned_to']; ?>
         </li>
         <li>
-            <strong>Status: </strong> <?= $task['completed'] ? 'Complete' : 'Incomplete'; ?>
+            <strong>Status: </strong>
+            <?php
+            /* If ternário para utilizar o boolean
+                $task['completed'] ? 'Complete' : 'Incomplete'; */
+            ?>
+            <?php if ($task['completed']) : ?>
+                <span class="icon">&#9989;</span>
+            <?php else: ?>
+                <span class="icon">Incomplete</span>
+            <?php endif; ?>
         </li>
     </ul>
 
