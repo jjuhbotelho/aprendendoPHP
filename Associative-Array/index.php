@@ -15,7 +15,8 @@ $task = [
     'title' => 'Homework',
     'due' => date('d-m-Y'),
     'assigned_to' => 'Eu mesma',
-    'completed' => false
+    'completed' => true,
+    'urgent' => true,
 ];
 
 //Homework

@@ -49,13 +49,17 @@
             <strong>Status: </strong>
             <?php
             /* If ternário para utilizar o boolean
-                $task['completed'] ? 'Complete' : 'Incomplete'; */
+                echo $task['completed'] ? 'Complete' : 'Incomplete'; */
             ?>
             <?php if ($task['completed']) : ?>
                 <span class="icon">&#9989;</span>
             <?php else: ?>
                 <span class="icon">Incomplete</span>
             <?php endif; ?>
+        </li>
+        <li>
+            <strong>Is urgent: </strong>
+            <?= $task['urgent'] ? 'Yes' : 'No'; ?>
         </li>
     </ul>
 
