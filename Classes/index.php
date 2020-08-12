@@ -1,5 +1,7 @@
 <?php
 
+require 'functions.php';
+
 class Task
 {
     public $description;
@@ -39,4 +41,3 @@ var_dump($tasks);
 
 $tasks[0]->complete();
 
-require 'index.view.php';
