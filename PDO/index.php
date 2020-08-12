@@ -1,12 +1,7 @@
 <?php
 
-require 'functions.php';
-require 'Task.php';
+$query = require 'bootstrap.php';
 
-//Armazena o retorno da função connectToDb
-$pdo = connectToDb();
-
-//Armazena o retorno da função fetchAllTasks
-$tasks = fetchAllTask($pdo);
+$tasks = $query->selectAll('todos');
 
 require 'index.view.php';
