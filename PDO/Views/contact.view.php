@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php require('Partials/head.php'); ?>
 
-<head>
+<h1>Contact Us</h1>
 
-    <meta charset="UTF-8">
-    <title>Document</title>
-
-    <style>
-        h1 {
-            background: aquamarine;
-            padding: 2em;
-            text-align: center;
-        }
-    </style>
-
-</head>
-
-<body>
-
-    <h1>Contact Us</h1>
-
-</body>
-</html>
+<?php require('Partials/footer.php'); ?>
