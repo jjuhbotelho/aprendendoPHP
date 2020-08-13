@@ -1,5 +1,6 @@
 <?php
 
+//Bootstrap setta todas as configurações da aplicação
 $app = [];
 
 $app['config'] = require 'config.php';
