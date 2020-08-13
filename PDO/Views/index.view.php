@@ -14,4 +14,4 @@
     <?php endforeach; ?>
 </ul>
 
-<?php require('/Partials/footer.php'); ?>
+<?php require('Partials/footer.php'); ?>
