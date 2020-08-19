@@ -1,16 +1,9 @@
 <?php
 
 //Bootstrap setta todas as configurações da aplicação
-$app = [];
-
-$app['config'] = require 'config.php';
-
-require 'Core/Router.php';
-require 'Core/Request.php';
-require 'Core/Database/Connection.php';
-require 'Core/Database/QueryBuilder.php';
+App::bind('config', require 'config.php');
 
 //Builda a QueryBuilder
-$app['database'] = new QueryBuilder(
-    Connection::make($app['config']['database'])
-);
+App::bind('database',  new QueryBuilder(
+    Connection::make(App::get('config')['database'])
+));
