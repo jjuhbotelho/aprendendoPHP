@@ -1,10 +1,8 @@
 <?php
 
 /** @var $router */
-//Objeto router definido na função load da classe Router acessando o metodo define
-$router->define([
-    '' => 'Controllers/index.php',
-    'about' => 'Controllers/about.php',
-    'about/culture' => 'Controllers/about-culture.php',
-    'contact' => 'Controllers/contact.php'
-]);
+
+$router->get('', 'Controllers/index.php');
+$router->get('about', 'Controllers/about.php');
+$router->get('about/culture', 'Controllers/about-culture.php');
+$router->post('names', 'Controllers/add-name.php');

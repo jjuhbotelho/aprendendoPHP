@@ -3,7 +3,10 @@
 
 class Router
 {
-    protected $routes = [];
+    public $routes = [
+        'GET' => [],
+        'POST' => []
+    ];
 
     public static function load($file)
     {
@@ -17,19 +20,22 @@ class Router
         return $router;
     }
 
-    //Define as rotas do projeto
-    public function define(array $routes)
+    public function get($uri, $controller)
     {
-        //Atribui as rotas recebidas à variável routes
-        $this->routes = $routes;
+        $this->routes['GET'][$uri] = $controller;
     }
 
-    public function direct($uri)
+    public function post($uri, $controller)
+    {
+        $this->routes['POST'][$uri] = $controller;
+    }
+
+    public function direct($uri, $requestType)
     {
         //Procura nos routes se existe uma key compatível com o uri
-        if (array_key_exists($uri, $this->routes)) {
+        if (array_key_exists($uri, $this->routes[$requestType])) {
             //Retorna o valor associado à key
-            return $this->routes[$uri];
+            return $this->routes[$requestType][$uri];
         }
 
         throw new Exception('No route defined for this URI.');
