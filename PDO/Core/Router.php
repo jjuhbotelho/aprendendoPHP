@@ -34,11 +34,27 @@ class Router
     {
         //Procura nos routes se existe uma key compatível com o uri
         if (array_key_exists($uri, $this->routes[$requestType])) {
-            //Retorna o valor associado à key
-            return $this->routes[$requestType][$uri];
+            //Retorna o valor associado à key = PagesController@home
+            //return $this->routes[$requestType][$uri];
+            return $this->callAction(
+            //Splat Operator (...) = Cada item do array vira um argumento da função
+            //Explode vai separar a classe e o método da string para um array a partir do @
+                ...explode('@', $this->routes[$requestType][$uri])
+            );
         }
-
         throw new Exception('No route defined for this URI.');
+    }
+
+    protected function callAction($controller, $action)
+    {
+        $controller = new $controller;
+        if (!method_exists($controller, $action)) {
+
+            throw new Exception(
+                "{$controller} does not respond to the {$action}."
+            );
+        }
+        return $controller->$action();
     }
 }
 
