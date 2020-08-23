@@ -1,5 +1,7 @@
 <?php
 
+use App\Core\App;
+
 //Bootstrap setta todas as configurações da aplicação
 App::bind('config', require 'config.php');
 
@@ -14,7 +16,7 @@ function view($name, $data = [])
 
     //Armazena a key compactada em uma variável que recebe o value
     extract($data);
-    return require "Views/{$name}.view.php";
+    return require "App/Views/{$name}.view.php";
 }
 
 function redirect($path)
