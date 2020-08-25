@@ -21,5 +21,5 @@ function view($name, $data = [])
 
 function redirect($path)
 {
-    header("Location: /{$path}");https://laracasts.com/
+    header("Location: /{$path}");
 }
