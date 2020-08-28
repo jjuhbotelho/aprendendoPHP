@@ -1,5 +1,25 @@
 <?php
 
+interface Gateway
+{
+    public function findCustomer();
+
+    public function findSubscriptionByCustomer();
+}
+
+class StripeGateway implements Gateway
+{
+    public function findCustomer()
+    {
+
+    }
+
+    public function findSubscriptionByCustomer()
+    {
+
+    }
+}
+
 class Subscription
 {
     protected Gateway $gateway;
@@ -25,26 +45,6 @@ class Subscription
     }
 
     public function swap($newPlan)
-    {
-
-    }
-}
-
-interface Gateway
-{
-    public function findCustomer();
-
-    public function findSubscriptionByCustomer();
-}
-
-class StripeGateway implements Gateway
-{
-    public function findCustomer()
-    {
-
-    }
-
-    public function findSubscriptionByCustomer()
     {
 
     }
