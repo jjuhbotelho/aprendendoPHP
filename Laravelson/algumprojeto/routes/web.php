@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Essa merda trás o nome da URI
+//Isso aqui trás o nome da URI
 //Route::get('test', function (){
 //    $name = request('name');
 //
@@ -23,3 +23,7 @@ use Illuminate\Support\Facades\Route;
 //});
 
 Route::get('/posts/{post}', 'PostController@show');
+
+Route::get('/contact', function (){
+    return view('contact');
+});
