@@ -45,15 +45,25 @@ class ArticlesController extends Controller
     }
 
     //Mostra uma view para editar o recurso existente
-    public function edit()
+    public function edit($id)
     {
+        $article = Article::find($id);
 
+        return view('articles/edit', compact('article'));
     }
 
     //Persiste o recurso editado
-    public function update()
+    public function update($id)
     {
+        $article = Article::find($id);
 
+        $article->tittle = request('tittle');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/articles/' . $article->id);
     }
 
     //Deleta o recurso
