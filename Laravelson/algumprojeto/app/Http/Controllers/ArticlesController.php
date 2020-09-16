@@ -27,13 +27,21 @@ class ArticlesController extends Controller
     //Mostra uma view para criar um novo recurso
     public function create()
     {
-
+        return view('articles/create');
     }
 
     //Persistir o recurso
     public function store()
     {
+        $article = new Article();
 
+        $article->tittle = request('tittle');
+        $article->excerpt = request('excerpt');
+        $article->body = request('body');
+
+        $article->save();
+
+        return redirect('/articles');
     }
 
     //Mostra uma view para editar o recurso existente
