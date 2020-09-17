@@ -33,6 +33,12 @@ class ArticlesController extends Controller
     //Persistir o recurso
     public function store()
     {
+        request()->validate([
+            'tittle' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = new Article();
 
         $article->tittle = request('tittle');
@@ -55,6 +61,12 @@ class ArticlesController extends Controller
     //Persiste o recurso editado
     public function update($id)
     {
+        request()->validate([
+            'tittle' => 'required',
+            'excerpt' => 'required',
+            'body' => 'required'
+        ]);
+
         $article = Article::find($id);
 
         $article->tittle = request('tittle');
