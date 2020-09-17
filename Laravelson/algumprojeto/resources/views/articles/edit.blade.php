@@ -17,7 +17,15 @@
                     <label class="label" for="tittle">Title</label>
 
                     <div class="control">
-                        <input class="input" type="text" name="tittle" id="tittle" value="{{ $article->tittle }}">
+                        <input class="input @error('tittle') is-danger @enderror"
+                               type="text"
+                               name="tittle"
+                               id="tittle"
+                               value="{{ $article->tittle }}">
+
+                        @error('tittle')
+                        <p class="help is-danger">{{ $errors->first('tittle') }}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -25,7 +33,13 @@
                     <label class="label" for="excerpt">Excerpt</label>
 
                     <div class="control">
-                        <textarea class="textarea" name="excerpt" id="excerpt">{{ $article->excerpt }}</textarea>
+                        <textarea class="textarea @error('excerpt') is-danger @enderror"
+                                  name="excerpt"
+                                  id="excerpt">{{ $article->excerpt }}</textarea>
+
+                        @error('excerpt')
+                        <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                        @enderror
                     </div>
                 </div>
 
@@ -33,7 +47,13 @@
                     <label class="label" for="body">Body</label>
 
                     <div class="control">
-                        <textarea class="textarea" name="body" id="body">{{ $article->body }}</textarea>
+                        <textarea class="textarea @error('body') is-danger @enderror"
+                                  name="body"
+                                  id="body">{{ $article->body }}</textarea>
+
+                        @error('body')
+                        <p class="help is-danger">{{ $errors->first('body') }}</p>
+                        @enderror
                     </div>
                 </div>
 
