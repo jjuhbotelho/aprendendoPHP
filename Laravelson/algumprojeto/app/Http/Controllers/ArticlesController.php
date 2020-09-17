@@ -17,10 +17,8 @@ class ArticlesController extends Controller
     }
 
     //Mostra um único recurso
-    public function show($id)
+    public function show(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles/show', ['article' => $article]);
     }
 
@@ -51,23 +49,19 @@ class ArticlesController extends Controller
     }
 
     //Mostra uma view para editar o recurso existente
-    public function edit($id)
+    public function edit(Article $article)
     {
-        $article = Article::find($id);
-
         return view('articles/edit', compact('article'));
     }
 
     //Persiste o recurso editado
-    public function update($id)
+    public function update(Article $article)
     {
         request()->validate([
             'tittle' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
         ]);
-
-        $article = Article::find($id);
 
         $article->tittle = request('tittle');
         $article->excerpt = request('excerpt');
