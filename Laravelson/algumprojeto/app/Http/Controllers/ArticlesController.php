@@ -31,19 +31,7 @@ class ArticlesController extends Controller
     //Persistir o recurso
     public function store()
     {
-        request()->validate([
-            'tittle' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);
-
-        $article = new Article();
-
-        $article->tittle = request('tittle');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
+        Article::create($this->validateArticle());
 
         return redirect('/articles');
     }
@@ -57,19 +45,21 @@ class ArticlesController extends Controller
     //Persiste o recurso editado
     public function update(Article $article)
     {
-        request()->validate([
+        //Poderia ter feito como no de cima mas deixei de exemplo
+        $validatedArticle = $this->validateArticle();
+
+        $article->update($validatedArticle);
+
+        return redirect('/articles/' . $article->id);
+    }
+
+    protected function validateArticle()
+    {
+        return request()->validate([
             'tittle' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
         ]);
-
-        $article->tittle = request('tittle');
-        $article->excerpt = request('excerpt');
-        $article->body = request('body');
-
-        $article->save();
-
-        return redirect('/articles/' . $article->id);
     }
 
     //Deleta o recurso
