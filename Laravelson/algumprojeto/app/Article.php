@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $guarded = [];
-//    protected $fillable = ['tittle', 'excerpt', 'body'];
+//    protected $fillable = ['title', 'excerpt', 'body'];
 
 //  Para situações em que eu não quero que busque apenas pelo Id e sim talvez pelo Slug
 //    public function getRouteKeyName()

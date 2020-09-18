@@ -2,7 +2,7 @@
 
 class AchievementBadge
 {
-    public $tittle;
+    public $title;
     public $description;
     public $points;
 

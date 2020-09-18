@@ -9,7 +9,7 @@ $person = [
 $person['name'] = 'Júlia';
 unset($person['age']);
 //Homework
-//Task = tittle, due, assigned_to, completed
+//Task = title, due, assigned_to, completed
 
 $task = [
     'title' => 'Homework',

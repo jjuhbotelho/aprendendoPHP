@@ -12,18 +12,18 @@
             <form method="POST" action="/articles">
                 @csrf
                 <div class="field">
-                    <label class="label" for="tittle">Title</label>
+                    <label class="label" for="title">Title</label>
 
                     <div class="control">
                         <input
-                            class="input @error('tittle') is-danger @enderror"
+                            class="input @error('title') is-danger @enderror"
                             type="text"
-                            name="tittle"
-                            id="tittle"
-                            value="{{ old('tittle') }}">
+                            name="title"
+                            id="title"
+                            value="{{ old('title') }}">
 
-                        @error('tittle')
-                            <p class="help is-danger">{{ $errors->first('tittle') }}</p>
+                        @error('title')
+                            <p class="help is-danger">{{ $errors->first('title') }}</p>
                         @enderror
                     </div>
                 </div>

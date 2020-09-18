@@ -25,12 +25,12 @@ class VideosCollection extends Collection
 
 class Video
 {
-    public $tittle;
+    public $title;
     public $length;
 
-    public function __construct($tittle, $length)
+    public function __construct($title, $length)
     {
-        $this->tittle = $tittle;
+        $this->title = $title;
         $this->length = $length;
     }
 }
