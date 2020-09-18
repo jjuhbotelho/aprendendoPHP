@@ -33,7 +33,7 @@ class ArticlesController extends Controller
     {
         Article::create($this->validateArticle());
 
-        return redirect('/articles');
+        return redirect(route('articles.index'));
     }
 
     //Mostra uma view para editar o recurso existente
@@ -50,7 +50,7 @@ class ArticlesController extends Controller
 
         $article->update($validatedArticle);
 
-        return redirect('/articles/' . $article->id);
+        return redirect($article->path());
     }
 
     protected function validateArticle()

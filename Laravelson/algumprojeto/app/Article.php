@@ -7,6 +7,12 @@ use Illuminate\Database\Eloquent\Model;
 class Article extends Model
 {
     protected $guarded = [];
+
+    public function path()
+    {
+        return route('articles.show', $this);
+    }
+
 //    protected $fillable = ['title', 'excerpt', 'body'];
 
 //  Para situações em que eu não quero que busque apenas pelo Id e sim talvez pelo Slug
