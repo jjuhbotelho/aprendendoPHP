@@ -36,7 +36,7 @@ $posts = [
 //Duas formas de trazer o título do elemento da Array com array_map
 //$modified = array_map(function ($post) {
 //
-//    return ['tittle' => $post->title];
+//    return ['title' => $post->title];
 //
 //}, $posts);
 //

@@ -14,17 +14,17 @@
                 @method('PUT')
 
                 <div class="field">
-                    <label class="label" for="tittle">Title</label>
+                    <label class="label" for="title">Title</label>
 
                     <div class="control">
-                        <input class="input @error('tittle') is-danger @enderror"
+                        <input class="input @error('title') is-danger @enderror"
                                type="text"
-                               name="tittle"
-                               id="tittle"
-                               value="{{ $article->tittle }}">
+                               name="title"
+                               id="title"
+                               value="{{ $article->title }}">
 
-                        @error('tittle')
-                        <p class="help is-danger">{{ $errors->first('tittle') }}</p>
+                        @error('title')
+                        <p class="help is-danger">{{ $errors->first('title') }}</p>
                         @enderror
                     </div>
                 </div>

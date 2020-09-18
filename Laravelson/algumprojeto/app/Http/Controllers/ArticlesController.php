@@ -56,7 +56,7 @@ class ArticlesController extends Controller
     protected function validateArticle()
     {
         return request()->validate([
-            'tittle' => 'required',
+            'title' => 'required',
             'excerpt' => 'required',
             'body' => 'required'
         ]);
