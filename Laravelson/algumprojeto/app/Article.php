@@ -13,6 +13,11 @@ class Article extends Model
         return route('articles.show', $this);
     }
 
+    public function user()
+    {
+        //
+    }
+
 //    protected $fillable = ['title', 'excerpt', 'body'];
 
 //  Para situações em que eu não quero que busque apenas pelo Id e sim talvez pelo Slug
@@ -21,3 +26,4 @@ class Article extends Model
 //        return 'slug';//Article::where('slug', $article)->first()
 //    }
 }
+

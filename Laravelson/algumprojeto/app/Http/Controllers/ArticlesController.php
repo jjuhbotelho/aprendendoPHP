@@ -65,6 +65,6 @@ class ArticlesController extends Controller
     //Deleta o recurso
     public function destroy()
     {
-
+        //
     }
 }
