@@ -49,3 +49,6 @@ class User extends Authenticatable
         //select * from projects where user_id = 3
     }
 }
+
+// $user = User::find(1); // select * from user where id = 1
+// $user->projects; // select * from projects where user_id = $user->id
