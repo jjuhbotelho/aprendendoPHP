@@ -20,19 +20,19 @@ class ArticlesController extends Controller
 
         $articles = $articles->paginate(4);
 
-        return view('articles/index', ['articles' => $articles]);
+        return view('articles.index', ['articles' => $articles]);
     }
 
     //Mostra um único recurso
     public function show(Article $article)
     {
-        return view('articles/show', ['article' => $article]);
+        return view('articles.show', ['article' => $article]);
     }
 
     //Mostra uma view para criar um novo recurso
     public function create()
     {
-        return view('articles/create');
+        return view('articles.create');
     }
 
     //Persistir o recurso
@@ -46,7 +46,7 @@ class ArticlesController extends Controller
     //Mostra uma view para editar o recurso existente
     public function edit(Article $article)
     {
-        return view('articles/edit', compact('article'));
+        return view('articles.edit', compact('article'));
     }
 
     //Persiste o recurso editado
