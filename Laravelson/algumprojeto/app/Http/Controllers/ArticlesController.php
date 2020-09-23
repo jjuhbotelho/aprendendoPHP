@@ -5,13 +5,20 @@ namespace App\Http\Controllers;
 
 
 use App\Article;
+use App\Tag;
 
 class ArticlesController extends Controller
 {
     //Renderizar uma lista de recursos
     public function index()
     {
-        $articles = Article::latest()->paginate(4);
+        if (request('tag')) {
+            $articles = Tag::where('name', request('tag'))->firstOrFail()->articles();
+        } else {
+            $articles = Article::latest();
+        }
+
+        $articles = $articles->paginate(4);
 
         return view('articles/index', ['articles' => $articles]);
     }
