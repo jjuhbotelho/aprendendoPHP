@@ -23,12 +23,11 @@ class Article extends Model
         return $this->belongsToMany(Tag::class);
     }
 
-//    protected $fillable = ['title', 'excerpt', 'body'];
+    //    protected $fillable = ['title', 'excerpt', 'body'];
 
-//  Para situações em que eu não quero que busque apenas pelo Id e sim talvez pelo Slug
-//    public function getRouteKeyName()
-//    {
-//        return 'slug';//Article::where('slug', $article)->first()
-//    }
+    //  Para situações em que eu não quero que busque apenas pelo Id e sim talvez pelo Slug
+    //    public function getRouteKeyName()
+    //    {
+    //        return 'slug';//Article::where('slug', $article)->first()
+    //    }
 }
-
