@@ -26,6 +26,19 @@ Route::get('/', function (){
     return view('welcome');
 });
 
+Route::get('/', function(){
+
+    $container = new \App\Container();
+
+    $container->bind('example', function(){
+        return new \App\Example();
+    });
+
+    $example = $container->resolve('example');
+
+    $example->go();
+});
+
 Route::get('/posts/{post}', 'PostController@show');
 
 Route::get('/contact', function (){
