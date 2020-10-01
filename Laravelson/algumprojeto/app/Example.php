@@ -4,8 +4,22 @@ namespace App;
 
 class Example
 {
-  public function go()
+  /*
+  |--------------------------------------------------------------------------
+  | Exemplificação de Container sem implementação muito real
+  |--------------------------------------------------------------------------
+  |public function go()
+  |{
+  | dump('it works!');
+  } */
+
+  protected $collaborator;
+
+  protected $foo;
+
+  public function __construct(Collaborator $collaborator, $foo)
   {
-    dump('it works!');
+    $this->collaborator = $collaborator;
+    $this->foo = $foo;
   }
 }

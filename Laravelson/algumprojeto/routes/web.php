@@ -13,42 +13,51 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-//Isso aqui trás o nome da URI
-//Route::get('test', function (){
-//    $name = request('name');
-//
-//    return view('test',[
-//        'name' => $name
-//    ]);
-//});
+/*
+|--------------------------------------------------------------------------
+| Isso aqui trás o nome da URI
+|--------------------------------------------------------------------------
+|Route::get('test', function (){
+|    $name = request('name');
+|
+|    return view('test',[
+|        'name' => $name
+|    ]);
+});*/
 
-Route::get('/', function (){
-    return view('welcome');
+/*
+|--------------------------------------------------------------------------
+| Exemplificação de Container sem implementação muito real
+|--------------------------------------------------------------------------
+|Route::get('/', function(){
+|
+|    $container = new \App\Container();
+|
+|   $container->bind('example', function(){
+|        return new \App\Example();
+|    });
+|
+|    $example = $container->resolve('example');
+|
+|    $example->go();
+}); */
+
+Route::get('/', function () {
+  return view('welcome');
 });
 
-Route::get('/', function(){
-
-    $container = new \App\Container();
-
-    $container->bind('example', function(){
-        return new \App\Example();
-    });
-
-    $example = $container->resolve('example');
-
-    $example->go();
-});
+Route::get('/', 'PagesController@home');
 
 Route::get('/posts/{post}', 'PostController@show');
 
-Route::get('/contact', function (){
-    return view('contact');
+Route::get('/contact', function () {
+  return view('contact');
 });
 
-Route::get('/about', function (){
-    return view('about', [
-        'articles' => App\Article::take(3)->latest()->get()
-    ]);
+Route::get('/about', function () {
+  return view('about', [
+    'articles' => App\Article::take(3)->latest()->get()
+  ]);
 });
 
 Route::get('/articles', 'ArticlesController@index')->name('articles.index');
