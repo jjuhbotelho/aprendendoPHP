@@ -13,13 +13,15 @@ class Example
   | dump('it works!');
   } */
 
-  protected $collaborator;
-
-  protected $foo;
-
-  public function __construct(Collaborator $collaborator, $foo)
+    public function __construct($apiKey)
   {
-    $this->collaborator = $collaborator;
-    $this->foo = $foo;
+    $this->apiKey = $apiKey;
   }
+
+  public function handle()
+  {
+    die('it works');
+  }
+
+
 }
