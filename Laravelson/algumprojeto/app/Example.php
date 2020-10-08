@@ -13,7 +13,7 @@ class Example
   | dump('it works!');
   } */
 
-    public function __construct($apiKey)
+  public function __construct($apiKey)
   {
     $this->apiKey = $apiKey;
   }
@@ -22,6 +22,4 @@ class Example
   {
     die('it works');
   }
-
-
 }

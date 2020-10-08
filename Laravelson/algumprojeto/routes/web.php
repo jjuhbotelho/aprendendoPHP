@@ -42,17 +42,16 @@ use Illuminate\Support\Facades\Route;
 |    $example->go();
 }); */
 
-Route::get('/', function () {
-  return view('welcome');
-});
+//Juro que não lembro direito oq isso faz mas é só olhar o Controller
+//Route::get('/', 'PagesController@home');
 
-Route::get('/', 'PagesController@home');
+
+Route::get('/', fn () => view('welcome'));
 
 Route::get('/posts/{post}', 'PostController@show');
 
-Route::get('/contact', function () {
-  return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
 
 Route::get('/about', function () {
   return view('about', [
