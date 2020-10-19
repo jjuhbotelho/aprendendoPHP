@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PaymentController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,8 +19,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
-
 Route::get('/home', [HomeController::class, 'index'])
     ->name('home')
     ->middleware('auth');
+
+Route::get('payments/create', [PaymentController::class, 'create'])->middleware('auth');
+Route::post('payments', [PaymentController::class, 'store'])->middleware('auth');
+
+Auth::routes();
