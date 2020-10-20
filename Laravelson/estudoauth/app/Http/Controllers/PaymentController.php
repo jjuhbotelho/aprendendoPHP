@@ -15,7 +15,7 @@ class PaymentController extends Controller
     public function store()
     {
         //Referência para quando preciso notificar apenas um user
-        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(900));
 
         //Referência para notificar uma collection de users
         //Notification::send(request()->user(), new PaymentReceived());
